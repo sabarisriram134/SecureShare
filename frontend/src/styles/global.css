@@ -1,0 +1,725 @@
+/* ================================================
+   SHIFT5 GLOBAL STYLES - TACTICAL AESTHETIC
+   Advanced UI for SecureShare
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Shift5 Color Palette */
+  --shift5-red: #FF3B30;
+  --shift5-black: #0D0D0D;
+  --shift5-dark-gray: #1A1A1A;
+  --shift5-light-gray: #2A2A2A;
+  --shift5-border: rgba(255, 59, 48, 0.15);
+  
+  /* Typography */
+  --shift5-sans: 'Inter', sans-serif;
+  --shift5-mono: 'JetBrains Mono', monospace;
+  --shift5-display: 'Poppins', 'Inter', sans-serif;
+  --shift5-tech: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Inter', sans-serif;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(13, 13, 13, 0.8);
+  --glass-border: rgba(255, 59, 48, 0.1);
+  --glass-blur: blur(20px);
+  
+  /* Legacy Support */
+  --primary-color: #FF3B30;
+  --secondary-color: #1A1A1A;
+  --success-color: #28a745;
+  --danger-color: #FF3B30;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --dark-color: #0D0D0D;
+  --light-color: #1A1A1A;
+  --border-radius: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--shift5-sans);
+  background-color: var(--shift5-black);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Background Grid Texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--shift5-red) 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--shift5-black) 0%, var(--shift5-dark-gray) 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+  position: relative;
+}
+
+/* ================================================
+   NAVBAR - TACTICAL HEADER
+   ================================================ */
+.navbar {
+  background: rgba(13, 13, 13, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--shift5-border);
+  box-shadow: 0 4px 20px rgba(255, 59, 48, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--shift5-red) 50%, transparent 100%);
+  opacity: 0.3;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--shift5-sans);
+  color: white !important;
+  text-transform: uppercase;
+}
+
+.navbar-brand span {
+  color: var(--shift5-red);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(255, 59, 48, 0.5);
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-family: var(--shift5-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--shift5-red) !important;
+  text-shadow: 0 0 15px rgba(255, 59, 48, 0.4);
+}
+
+/* ================================================
+   DASHBOARD STYLES
+   ================================================ */
+.dashboard {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.dashboard h1 {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  font-family: var(--shift5-sans);
+  text-transform: uppercase;
+  background: linear-gradient(90deg, 
+    var(--shift5-red) 0%,
+    rgba(255, 59, 48, 0.6) 50%,
+    var(--shift5-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-family: var(--shift5-sans);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* ================================================
+   STAT CARDS - GLASSMORPHIC
+   ================================================ */
+.stat-card {
+  border-radius: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(255, 59, 48, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--shift5-border);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--shift5-red) 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 59, 48, 0.2);
+  border-color: var(--shift5-red);
+  background: rgba(255, 59, 48, 0.1);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  background: rgba(255, 59, 48, 0.15);
+  border: 1px solid var(--shift5-border);
+  margin-bottom: 1rem;
+  color: var(--shift5-red);
+}
+
+.bg-primary-light {
+  background-color: rgba(255, 59, 48, 0.05);
+}
+
+.bg-success-light {
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+.bg-info-light {
+  background-color: rgba(23, 162, 184, 0.05);
+}
+
+/* ================================================
+   FILE CARD STYLES
+   ================================================ */
+.file-card {
+  border-radius: 0;
+  border: 1px solid var(--shift5-border);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(135deg, 
+    rgba(13, 13, 13, 0.9) 0%,
+    rgba(26, 26, 26, 0.9) 100%);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.file-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255, 59, 48, 0.1) 50%,
+    transparent 100%);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.file-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(255, 59, 48, 0.15);
+  border-color: var(--shift5-red);
+}
+
+.file-card:hover::before {
+  left: 100%;
+}
+
+.file-card-header {
+  background: linear-gradient(90deg, 
+    rgba(255, 59, 48, 0.15) 0%,
+    rgba(255, 59, 48, 0.05) 100%);
+  border-bottom: 1px solid var(--shift5-border);
+  color: var(--shift5-red);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+
+.file-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 59, 48, 0.3));
+}
+
+.file-card-body {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.file-name {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+  font-family: var(--shift5-sans);
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+.file-cid {
+  font-family: var(--shift5-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 59, 48, 0.8);
+  background-color: rgba(255, 59, 48, 0.08);
+  padding: 0.75rem;
+  border: 1px solid var(--shift5-border);
+  border-radius: 0;
+  margin-top: 0.5rem;
+  word-break: break-all;
+  letter-spacing: 0.2px;
+}
+
+/* ================================================
+   UPLOAD BOX - TACTICAL DROP ZONE
+   ================================================ */
+.upload-box {
+  border: 2px dashed var(--shift5-red);
+  border-radius: 0;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, 
+    rgba(255, 59, 48, 0.05) 0%,
+    rgba(255, 59, 48, 0.02) 100%);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--shift5-red) 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.upload-box:hover {
+  border-color: var(--shift5-red);
+  background: linear-gradient(135deg, 
+    rgba(255, 59, 48, 0.1) 0%,
+    rgba(255, 59, 48, 0.05) 100%);
+  box-shadow: 0 0 40px rgba(255, 59, 48, 0.2);
+  transform: scale(1.01);
+}
+
+.upload-box.drag-over {
+  border-color: var(--shift5-red);
+  background: linear-gradient(135deg, 
+    rgba(255, 59, 48, 0.15) 0%,
+    rgba(255, 59, 48, 0.08) 100%);
+  box-shadow: 0 0 60px rgba(255, 59, 48, 0.3);
+  transform: scale(1.02);
+}
+
+.upload-icon {
+  font-size: 3.5rem;
+  color: var(--shift5-red);
+  margin-bottom: 1rem;
+  animation: tactical-float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 59, 48, 0.4));
+}
+
+@keyframes tactical-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ================================================
+   BUTTON STYLES - TACTICAL CONTROLS
+   ================================================ */
+button, .btn {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: var(--shift5-sans);
+}
+
+.btn-primary, .btn-danger {
+  background: rgba(255, 59, 48, 0.15);
+  border: 1px solid var(--shift5-red);
+  color: var(--shift5-red);
+  border-radius: 0;
+  padding: 0.85rem 1.8rem;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-size: 0.85rem;
+  font-family: var(--shift5-sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before, .btn-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 59, 48, 0.2);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 59, 48, 0.3);
+  background: rgba(255, 59, 48, 0.2);
+  border-color: var(--shift5-red);
+}
+
+.btn-primary:hover::before, .btn-danger:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active, .btn-danger:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* ================================================
+   BADGE STYLES
+   ================================================ */
+.badge {
+  border-radius: 0;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-family: var(--shift5-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(255, 59, 48, 0.15);
+  color: var(--shift5-red);
+  border: 1px solid var(--shift5-border);
+}
+
+/* ================================================
+   FOOTER - TACTICAL DESIGN
+   ================================================ */
+.footer {
+  background: linear-gradient(180deg, 
+    rgba(13, 13, 13, 0.95) 0%,
+    var(--shift5-dark-gray) 100%) !important;
+  margin-top: auto;
+  border-top: 1px solid var(--shift5-border);
+  backdrop-filter: blur(10px);
+  padding: 3rem 0 1rem 0 !important;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--shift5-red) 50%, transparent 100%);
+  opacity: 0.3;
+}
+
+.footer h6 {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: var(--shift5-sans);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.footer p, .footer li {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  font-family: var(--shift5-sans);
+}
+
+.footer a:hover,
+.footer li:hover {
+  color: var(--shift5-red);
+}
+
+/* ================================================
+   LOADING SPINNER - TACTICAL
+   ================================================ */
+.spinner-border {
+  color: var(--shift5-red);
+  width: 3rem;
+  height: 3rem;
+  border-width: 3px;
+  filter: drop-shadow(0 0 10px rgba(255, 59, 48, 0.5));
+}
+
+/* ================================================
+   ALERTS - GLASSMORPHIC
+   ================================================ */
+.alert {
+  border-radius: 0;
+  border: 1px solid;
+  animation: alert-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  font-family: var(--shift5-sans);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@keyframes alert-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.08);
+  color: rgba(40, 167, 69, 0.95);
+  border-color: rgba(40, 167, 69, 0.3);
+  border-left: 3px solid #28a745;
+}
+
+.alert-danger {
+  background-color: rgba(255, 59, 48, 0.08);
+  color: var(--shift5-red);
+  border-color: var(--shift5-border);
+  border-left: 3px solid var(--shift5-red);
+}
+
+.alert-info {
+  background-color: rgba(23, 162, 184, 0.08);
+  color: rgba(23, 162, 184, 0.95);
+  border-color: rgba(23, 162, 184, 0.3);
+  border-left: 3px solid #17a2b8;
+}
+
+/* ================================================
+   FORM ELEMENTS - TACTICAL INPUTS
+   ================================================ */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  border-radius: 0;
+  border: 1px solid rgba(255, 59, 48, 0.2);
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-family: var(--shift5-sans);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--shift5-red);
+  background: rgba(255, 59, 48, 0.05);
+  box-shadow: 0 0 25px rgba(255, 59, 48, 0.2), inset 0 0 15px rgba(255, 59, 48, 0.08);
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+@media (max-width: 768px) {
+  .dashboard h1 {
+    font-size: 2.5rem;
+  }
+
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+
+  .file-card {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-text {
+    font-size: 0.9rem;
+  }
+
+  .upload-box {
+    padding: 2rem;
+  }
+
+  .upload-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard {
+    padding: 1.5rem 0;
+  }
+
+  .dashboard h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+/* ================================================
+   UTILITY CLASSES
+   ================================================ */
+.text-gradient {
+  background: linear-gradient(90deg, 
+    var(--shift5-red) 0%,
+    rgba(255, 59, 48, 0.6) 50%,
+    var(--shift5-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-lg {
+  box-shadow: 0 20px 50px rgba(255, 59, 48, 0.15);
+}
+
+.rounded-lg {
+  border-radius: 0;
+}
+
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: 0;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 59, 48, 1);
+  }
+  100% {
+    top: 100%;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.2);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+.slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

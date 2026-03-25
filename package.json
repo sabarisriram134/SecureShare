@@ -1,0 +1,6 @@
+{
+  "name": "secureshare",
+  "version": "1.0.0",
+  "workspaces": ["backend", "frontend", "smart-contracts"],
+  "private": true
+}

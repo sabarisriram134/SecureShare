@@ -1,0 +1,34 @@
+# --- Dependencies ---
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+backend/.env
+
+# --- Build Artifacts & Caches ---
+dist/
+build/
+smart-contracts/artifacts/
+smart-contracts/cache/
+smart-contracts/typechain/
+smart-contracts/typechain-types/
+
+# --- Logs & Local Data ---
+*.log
+backend/auth-debug.log
+backend/.mock-storage/
+backend/uploads/
+
+# --- OS & Editor Files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

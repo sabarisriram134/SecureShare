@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <!-- Background circle -->
+    <circle cx="100" cy="100" r="95" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+    
+    <!-- Main logo shape -->
+    <g transform="translate(100, 100)">
+        <!-- Shield outline -->
+        <path d="M 0 -50 L 40 -30 L 40 10 C 40 40 0 60 0 60 C 0 60 -40 40 -40 10 L -40 -30 Z" 
+                    fill="#4a90e2" stroke="#333" stroke-width="2"/>
+        
+        <!-- Checkmark -->
+        <path d="M -15 0 L -5 10 L 15 -10" 
+                    stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+</svg>

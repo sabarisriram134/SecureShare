@@ -1,0 +1,13 @@
+services:
+  backend:
+    build: ../backend
+    ports:
+      - "6000:6000"
+    environment:
+      MONGO_URI: mongodb+srv://admin:shiva@cluster0.kidebcs.mongodb.net/secureshare_demo?retryWrites=true&w=majority
+    
+  frontend:
+    build: ../frontend
+    ports:
+      - "5172:5172"
+
