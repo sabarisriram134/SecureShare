@@ -82,24 +82,28 @@
 }
 
 /* ==================== CONTAINER & LAYOUT ==================== */
+
 .video-container {
   animation: fadeInUp 0.6s ease-out;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 245, 0.5));
+  background: #0D0D0D;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(13, 13, 13, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
 
+
 .video-header {
-  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
-  color: white;
+  background: linear-gradient(135deg, #1a0d0d 0%, #0D0D0D 100%);
+  color: #FF3B30;
   padding: 1.5rem 1.5rem;
   animation: slideDown 0.6s ease-out;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 59, 48, 0.15);
 }
+
 
 .video-header::before {
   content: '';
@@ -108,7 +112,7 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 59, 48, 0.08) 0%, transparent 70%);
   animation: float 6s ease-in-out infinite;
   pointer-events: none;
 }
@@ -118,37 +122,45 @@
   z-index: 2;
 }
 
+
 .video-header h5 {
   margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FF3B30;
 }
+
 
 .video-header small {
   display: block;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 59, 48, 0.7);
   margin-top: 4px;
   font-size: 0.875rem;
 }
 
+
 .video-body {
   padding: 2rem;
+  background: #1A1A1A;
+  color: #e0e0e0;
 }
 
 /* ==================== UPLOAD ZONE ==================== */
+
 .video-upload-zone {
-  border: 2px dashed rgba(220, 38, 38, 0.3);
+  border: 2px dashed #FF3B30;
   border-radius: 12px;
   padding: 2.5rem 1.5rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.02) 0%, rgba(153, 27, 27, 0.02) 100%);
+  background: rgba(255, 59, 48, 0.03);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 0.6s ease-out 0.1s both;
 }
+
 
 .video-upload-zone::before {
   content: '';
@@ -157,39 +169,45 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 59, 48, 0.15), transparent);
   animation: shimmer 0.6s ease-out;
 }
 
+
 .video-upload-zone:hover {
-  border-color: #DC2626;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(153, 27, 27, 0.08) 100%);
+  border-color: #FF3B30;
+  background: rgba(255, 59, 48, 0.06);
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(220, 38, 38, 0.15);
+  box-shadow: 0 12px 24px rgba(255, 59, 48, 0.15);
 }
 
+
 .video-upload-zone.drag-active {
-  border-color: #DC2626;
-  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(153, 27, 27, 0.15) 100%);
+  border-color: #FF3B30;
+  background: rgba(255, 59, 48, 0.10);
   transform: scale(1.02);
 }
+
 
 .video-upload-icon {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   display: inline-block;
   animation: float 3s ease-in-out infinite;
+  color: #FF3B30;
 }
 
+
 .video-upload-text {
-  color: #333;
+  color: #e0e0e0;
   margin: 0;
   font-weight: 500;
   font-size: 1rem;
 }
 
+
 .video-upload-subtext {
-  color: #666;
+  color: rgba(255, 59, 48, 0.7);
   font-size: 0.875rem;
   margin: 0.5rem 0 0 0;
 }
