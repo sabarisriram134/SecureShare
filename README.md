@@ -3,7 +3,7 @@
 A secure and modern file sharing platform built with the MERN stack. SecureShare focuses on safe file uploads, protected sharing, authentication, and a smooth user experience.
 
 ---
-
+ 
 ## 🚀 Features
 
 * 🔑 User Authentication & Authorization
